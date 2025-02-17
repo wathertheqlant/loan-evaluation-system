@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="io.watertheqlant.loan.evaluation.system.dao.ScbCreditInfoMapper">
+
+    <insert id="saveScbCreditInfo" parameterType="io.watertheqlant.loan.evaluation.system.entity.ScbCreditInfo">
+        INSERT INTO scb_credit_info (id,
+                                     customer_id,
+                                     request_date)
+        VALUES (#{id},
+                #{customerId},
+                #{requestDate})
+    </insert>
+
+    <insert id="saveScbCreditDetailInfo" parameterType="io.watertheqlant.loan.evaluation.system.entity.ScbCreditInfoDetail">
+        INSERT INTO scb_credit_info_details (id,
+                                             scb_credit_info_id,
+                                            credit_info_dictionary_id,
+                                             type_name,
+                                             description,
+                                            value)
+        VALUES (#{id},
+                #{scbCreditInfoId},
+                #{creditInfoDictionaryId},
+                #{typeName},
+                #{description},
+                #{value})
+    </insert>
+
+</mapper>

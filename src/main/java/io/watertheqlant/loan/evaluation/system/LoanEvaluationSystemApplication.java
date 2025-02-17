@@ -1,13 +1,13 @@
-package io.watertheqlant.loan.limit.calculation.system;
+package io.watertheqlant.loan.evaluation.system;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class LoanLimitCalculationSystemApplication {
+public class LoanEvaluationSystemApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(LoanLimitCalculationSystemApplication.class, args);
+        SpringApplication.run(LoanEvaluationSystemApplication.class, args);
     }
 
 }

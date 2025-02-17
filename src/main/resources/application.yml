@@ -1,8 +1,8 @@
 spring:
   application:
-    name: loan-limit-calculation-system
+    name: loan-evaluation-system
   datasource:
-    url: jdbc:mysql://localhost:3308/loan-limit-calculation-system
+    url: jdbc:mysql://localhost:3308/loan-evaluation-system
     username: root
     password: min0419!@
     driver-class-name: com.mysql.cj.jdbc.Driver

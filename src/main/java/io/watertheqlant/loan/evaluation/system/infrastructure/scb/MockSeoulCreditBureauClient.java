@@ -1,11 +1,13 @@
-package io.watertheqlant.loan.limit.calculation.system.infrastructure.scb;
+package io.watertheqlant.loan.evaluation.system.infrastructure.scb;
 
-import io.watertheqlant.loan.limit.calculation.system.infrastructure.scb.dto.SeoulCreditBureauDetailInformation;
-import io.watertheqlant.loan.limit.calculation.system.infrastructure.scb.dto.SeoulCreditBureauInformation;
-import io.watertheqlant.loan.limit.calculation.system.infrastructure.scb.type.DataType;
+import io.watertheqlant.loan.evaluation.system.infrastructure.scb.dto.SeoulCreditBureauDetailInformation;
+import io.watertheqlant.loan.evaluation.system.infrastructure.scb.dto.SeoulCreditBureauInformation;
+import io.watertheqlant.loan.evaluation.system.infrastructure.scb.type.DataType;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 public class MockSeoulCreditBureauClient implements SeoulCreditBureauClient {
 
   @Override

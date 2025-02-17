@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="io.watertheqlant.loan.evaluation.system.dao.SequenceMapper">
+
+    <!-- 시퀀스 값 가져오기 -->
+    <select id="getNextSequenceValue" resultType="long">
+        SELECT value
+        FROM sequences
+        WHERE name = #{seqName}
+        FOR UPDATE
+    </select>
+
+    <!-- 시퀀스 값 증가 -->
+    <update id="incrementSequenceValue">
+        UPDATE sequences
+        SET value = value + 1
+        WHERE name = #{seqName}
+    </update>
+
+    <!-- 시퀀스 추가 -->
+    <insert id="addSequence">
+        INSERT INTO sequences (name, value)
+        VALUES (#{seqName}, #{value})
+    </insert>
+
+
+</mapper>
