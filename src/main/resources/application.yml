@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: loan-limit-calculation-system
+  datasource:
+    url: jdbc:mysql://localhost:3308/loan-limit-calculation-system
+    username: root
+    password: min0419!@
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis:
+  mapper-locations: classpath:mappers/**/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
