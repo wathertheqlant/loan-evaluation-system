@@ -1,4 +1,4 @@
-package io.watertheqlant.loan.limit.calculation.system.infrastructure.scb.type;
+package io.watertheqlant.loan.evaluation.system.infrastructure.scb.type;
 
 public enum DataType {
   STRING,

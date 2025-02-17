@@ -1,6 +1,6 @@
-package io.watertheqlant.loan.limit.calculation.system.infrastructure.scb.dto;
+package io.watertheqlant.loan.evaluation.system.infrastructure.scb.dto;
 
-import io.watertheqlant.loan.limit.calculation.system.infrastructure.scb.type.DataType;
+import io.watertheqlant.loan.evaluation.system.infrastructure.scb.type.DataType;
 import lombok.*;
 
 import java.math.BigDecimal;
