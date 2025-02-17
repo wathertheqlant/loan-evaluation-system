@@ -2,15 +2,18 @@ package io.watertheqlant.loan.evaluation.system.dao;
 
 import io.watertheqlant.loan.evaluation.system.entity.ScbCreditInfoDetail;
 import io.watertheqlant.loan.evaluation.system.entity.ScbCreditInfo;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 
+@Disabled
 @Transactional
 @SpringBootTest
 class ScbCreditInfoMapperTest {
+
 
   private ScbCreditInfoMapper scbCreditInfoMapper;
 

@@ -14,7 +14,7 @@
     <insert id="saveScbCreditDetailInfo" parameterType="io.watertheqlant.loan.evaluation.system.entity.ScbCreditInfoDetail">
         INSERT INTO scb_credit_info_details (id,
                                              scb_credit_info_id,
-                                            credit_info_dictionary_id,
+                                             credit_info_dictionary_id,
                                              type_name,
                                              description,
                                             value)
