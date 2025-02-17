@@ -1,0 +1,62 @@
+[customers] : 고객정보
+	- id (Long)
+	- customer_name (string) : 고객이름
+	- customer_jumin (string) : 고객 주민등록번호
+	- customer_annual_income(bigint) : 고객 연소득
+	- customer_credit_id (Long) : 고객 신용정보 ID
+
+------------
+[internal_policies] : 내부기준 종류
+    - id(Long)
+    - target_field_name(string) : (ex. major_loan_usage_count)
+    - description(string) : (e.g. 대부업 대출 이용 횟수)
+	- operator1(string) : 연산방법1
+	- operator2(string) : 연산방법2
+	- value1(decimal(32,9)) : 연산대상1
+	- value2(decimal(32,9)) : 연산대상2
+	- evaluation_score(int) : 평가점수
+	- expired_at(datetime) : 만료시점
+
+------------
+[internal_css_grade_policies] : 내부기준 산정 스코어 별 대출신용등급 CSS
+	- id(Long)
+	- credit_grade(int) : 신용등급
+	- credit_max_score(int) : 산정범위 최대 점수
+	- credit_min_score(int) : 산정범위 최소 점수
+    - grade_valid_at (datetime): 적용유효시점
+
+------------
+
+[internal_css_evaluated_scores] : 내부기준 평가 점수
+	- id (Long)
+	- customer_id (Long) : 고객ID
+	- customer_css_id (Long): 고객 CSS ID
+	- internal_css_grade_policy_id (Long) : 내부기준ID
+	- evaluated_score (int) : (ex. 2, 300, ... )
+	- standard_score (int) : 내부기준 평가점수
+    - evaluated_at (datetime) : 평가시점
+
+------------
+[customer_css] : 고객 CSS
+	- id (Long)
+	- customer_id (Long) : 고객_ID
+	- css_grade (int) : CSS 신용등급
+	- css_valid_date (datetime) : CSS 적용유효기간
+	- scb_id (Long) : 서울신용정보_ID
+
+------------
+[scb_credit_grade_info] : `서울신용정보`에서 받아온 등급정보
+	- id (Long)
+	- customer_id (Long) : 고객_ID
+	- major_loan_usage_count (int) : 대부업 대출이용 횟수
+	- credit_rating (int) : 신용등급 ₩
+	- loan_default_count (int) : 대출 연체 횟수
+	- annual_income (bigint) : 연소득
+	- approved_income (bigint): 인정소득 (Y: 연소득 / N : 연소득*0.7)
+	- is_regular_employee (int)  : 정규직 여부
+	- short_term_card_loan_usage_count (boolean)  : 단기카드대출 이용횟수
+	- loan_clear_count (int)  : 대출 완납 횟수
+	- credit_card_issue_count (int)  : 신용카드 발행 횟수
+	- request_date (datetime) : 조회 날짜
+
+------------ㅇ
