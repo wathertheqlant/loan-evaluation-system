@@ -1,4 +1,4 @@
-INSERT INTO `loan-evaluation-system`.sequences (name, value) VALUES ('credit_info_dictionary', 0);
+INSERT INTO `loan-evaluation-system`.sequences (name, value) VALUES ('credit_info_dictionary', 100);
 INSERT INTO `loan-evaluation-system`.sequences (name, value) VALUES ('customer_css', 0);
 INSERT INTO `loan-evaluation-system`.sequences (name, value) VALUES ('customers', 0);
 INSERT INTO `loan-evaluation-system`.sequences (name, value) VALUES ('internal_css_evaluated_scores', 0);
