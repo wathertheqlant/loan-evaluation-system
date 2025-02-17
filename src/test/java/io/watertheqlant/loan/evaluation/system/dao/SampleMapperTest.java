@@ -1,4 +1,4 @@
-package io.watertheqlant.loan.limit.calculation.system.dao;
+package io.watertheqlant.loan.evaluation.system.dao;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

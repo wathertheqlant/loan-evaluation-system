@@ -1,1 +1,1 @@
-rootProject.name = "loan-limit-calculation-system"
+rootProject.name = "loan-evaluation-system"

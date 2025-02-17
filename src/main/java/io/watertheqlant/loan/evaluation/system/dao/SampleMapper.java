@@ -1,4 +1,4 @@
-package io.watertheqlant.loan.limit.calculation.system.dao;
+package io.watertheqlant.loan.evaluation.system.dao;
 
 import org.apache.ibatis.annotations.Mapper;
 
