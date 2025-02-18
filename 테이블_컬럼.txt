@@ -59,4 +59,13 @@
 	- credit_card_issue_count (int)  : 신용카드 발행 횟수
 	- request_date (datetime) : 조회 날짜
 
-------------ㅇ
+------------
+[loan_rejection_policy] : 대출 거절 조건
+    - id (INT AUTO_INCREMENT PRIMARY KEY) : 기본 키
+    - condition_name (VARCHAR(255)) : 조건명
+    - condition_code (VARCHAR(50) UNIQUE) : 조건 코드
+    - threshold_value (DECIMAL(20, 2)) : 기준 값
+    - operator (ENUM(’=’, ‘!=’, ‘<’, ‘<=’, ‘>’, ‘>=’)) : 비교 연산자
+    - description (TEXT) : 설명
+    - created_at (TIMESTAMP DEFAULT CURRENT_TIMESTAMP) : 생성 일자
+    - updated_at (TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP) : 수정 일자
