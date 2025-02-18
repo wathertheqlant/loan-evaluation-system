@@ -1,8 +1,6 @@
 package io.watertheqlant.loan.evaluation.system.type;
 
-import lombok.AccessLevel;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 
 @Getter
 public enum CreditBureauTypes {
