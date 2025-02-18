@@ -2,9 +2,8 @@ CREATE TABLE customers (
                            id BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT '고객 ID',
                            customer_name VARCHAR(255) NOT NULL COMMENT '고객이름',
                            customer_jumin VARCHAR(50) NOT NULL UNIQUE COMMENT '고객 주민등록번호',
-                           customer_annual_income BIGINT NOT NULL COMMENT '고객 연소득',
-                           customer_credit_id BIGINT NOT NULL COMMENT '고객 신용정보 ID',
-                           INDEX idx_customer_credit_id (customer_credit_id) COMMENT '고객 신용정보 조회 최적화'
+                           internal_css_evaluated_score_id BIGINT NOT NULL COMMENT '내부 CSS 평가점수 ID',
+                           INDEX idx_internal_css_evaluated_score_id (internal_css_evaluated_score_id) COMMENT '고객 신용정보 조회 최적화'
 ) COMMENT='고객정보';
 
 CREATE TABLE internal_policies (
