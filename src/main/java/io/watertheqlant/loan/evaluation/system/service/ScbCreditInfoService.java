@@ -16,6 +16,8 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static io.watertheqlant.loan.evaluation.system.type.ScbCreditInfoCalculationTypeName.APPROVED_INCOME;
+
 @RequiredArgsConstructor
 @Service
 public class ScbCreditInfoService {
@@ -49,6 +51,8 @@ public class ScbCreditInfoService {
         .requestDate(now)
         .details(scbCreditInfoDetails)
         .build();
+    CreditInfoDictionary creditInfoDictionary = creditInfoDictionaryMapper.findCreditInfoDictionaryByTypeName(APPROVED_INCOME.getTypeName(), CreditBureauTypes.SCB.name());
+    scbCreditInfo.calculateApprovedIncome(creditInfoDictionary.getId());
 
     scbCreditInfoMapper.save(scbCreditInfo);
     return scbCreditInfo;

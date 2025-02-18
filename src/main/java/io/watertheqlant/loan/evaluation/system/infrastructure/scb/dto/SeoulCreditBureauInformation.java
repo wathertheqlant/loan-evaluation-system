@@ -15,13 +15,5 @@ public class SeoulCreditBureauInformation {
   private String jumin;
   private List<SeoulCreditBureauDetailInformation> details;
 
-  public <T> T findDetail(String code) {
-    var result = details.stream()
-      .filter(detail -> detail.getName().equals(code))
-      .findFirst()
-      .map(SeoulCreditBureauDetailInformation::getValue)
-      .orElse(null);
 
-    return (T) result;
-  }
 }

@@ -38,7 +38,7 @@ public class InternalCssEvaluationService {
     List<InternalEvaluationPolicy> internalPolicies = internalEvaluationPolicyMapper.findAllByExpiredAtGreaterThanEqual(now);
 
     return internalPolicies.stream()
-      .map(internalEvaluationPolicy -> internalEvaluationPolicy.evaluate(scbCreditInfo.getValue(internalEvaluationPolicy.getCreditInfoDictionaryId())))
+      .map(internalEvaluationPolicy -> internalEvaluationPolicy.evaluate(scbCreditInfo.getValueByCreditInfoDictionaryId(internalEvaluationPolicy.getCreditInfoDictionaryId())))
       .toList();
   }
 
