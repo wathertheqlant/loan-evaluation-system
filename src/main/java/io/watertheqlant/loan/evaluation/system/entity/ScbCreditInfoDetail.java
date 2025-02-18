@@ -16,6 +16,7 @@ public class ScbCreditInfoDetail {
   private Long creditInfoDictionaryId;
   private String typeName;
   private String description;
+
   private String value;
 
 }
