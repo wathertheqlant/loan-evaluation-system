@@ -5,6 +5,7 @@
     <select id="read"
             resultType="map">
         SELECT 1 as number FROM dual
+
     </select>
 
 </mapper>

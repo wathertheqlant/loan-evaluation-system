@@ -2,5 +2,6 @@ package io.watertheqlant.loan.evaluation.system.type;
 
 public enum InternalPolicyEvaluationResultType {
   PASS,
-  FAIL
+  FAIL,
+  NOT_APPLICABLE
 }
