@@ -5,7 +5,7 @@ CREATE TABLE customers
     customer_jumin VARCHAR(50)  NOT NULL UNIQUE COMMENT '고객 주민등록번호'
 ) COMMENT ='고객정보';
 
-CREATE TABLE internal_policies
+CREATE TABLE internal_evaluation_policies
 (
     id                        BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT '내부 기준 ID',
     credit_info_dictionary_id LONG           NOT NULL COMMENT '신용 정보 종류',
@@ -17,7 +17,7 @@ CREATE TABLE internal_policies
     evaluation_score          INT            NOT NULL COMMENT '평가점수',
     expired_at                DATETIME       NOT NULL COMMENT '만료시점',
     INDEX idx_expired_at (expired_at)
-) COMMENT ='내부기준 정책';
+) COMMENT ='내부 평가 정책';
 
 CREATE TABLE internal_css_grade_policies
 (
