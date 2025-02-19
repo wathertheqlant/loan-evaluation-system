@@ -1,22 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="io.watertheqlant.loan.evaluation.system.dao.InternalCssGradePolicyMapper">
+<mapper namespace="io.watertheqlant.loan.evaluation.system.domain.dao.InternalCssGradePolicyMapper">
 
-    <select id="findByScoreSumAndRequestedAt" resultType="io.watertheqlant.loan.evaluation.system.entity.InternalCssGradePolicy">
+    <select id="findByScoreSumAndRequestedAt"
+            resultType="io.watertheqlant.loan.evaluation.system.domain.entity.InternalCssGradePolicy">
         select id
-            ,       css_grade
-            ,min_evaluation_score
-            ,max_evaluation_score
-            ,min_loan_amount
-            ,max_loan_amount
-            ,interest_rate
-            ,min_loan_term
-            ,max_loan_term
-            ,expired_at
+             , css_grade
+             , min_evaluation_score
+             , max_evaluation_score
+             , min_loan_amount
+             , max_loan_amount
+             , interest_rate
+             , min_loan_term
+             , max_loan_term
+             , expired_at
         from internal_css_grade_policies
         where #{scoreSum} between min_evaluation_score and max_evaluation_score
-        and expired_at >= #{requestedAt}
+          and expired_at >= #{requestedAt}
 
+    </select>
+
+    <select id="findById" resultType="io.watertheqlant.loan.evaluation.system.domain.entity.InternalCssGradePolicy">
+        select id
+             , css_grade
+             , min_evaluation_score
+             , max_evaluation_score
+             , min_loan_amount
+             , max_loan_amount
+             , interest_rate
+             , min_loan_term
+             , max_loan_term
+             , expired_at
+        from internal_css_grade_policies
+        where id = #{internalCssGradePolicyId}
     </select>
 
 </mapper>

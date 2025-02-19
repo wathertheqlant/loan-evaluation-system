@@ -1,35 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="io.watertheqlant.loan.evaluation.system.dao.InternalCssEvaluationScoreMapper">
+<mapper namespace="io.watertheqlant.loan.evaluation.system.domain.dao.InternalCssEvaluationScoreMapper">
 
-    <!--
-CREATE TABLE internal_css_evaluation_scores
-(
-    id                           BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT '고객 CSS ID',
-    customer_id                  BIGINT   NOT NULL COMMENT '고객_ID',
-    internal_css_grade_policy_id BIGINT   NOT NULL COMMENT '내부 CSS 등급 정책 ID',
-    css_grade                    INT      NOT NULL COMMENT 'CSS 등급',
-    scb_credit_info_id           BIGINT   NOT NULL COMMENT '서울신용정보 ID',
-    expired_at                   DATETIME NOT NULL COMMENT '만료시점',
-    evaluated_at                 DATETIME NOT NULL COMMENT '평가시점',
-    INDEX idx_customer_id (customer_id),
-    INDEX idx_expired_at (expired_at),
-    INDEX idx_scb_id (scb_credit_info_id),
-    INDEX idx_evaluated_at (evaluated_at)
-) COMMENT ='내부 CSS 평가 점수';
-
-CREATE TABLE internal_css_evaluation_score_items
-(
-    id                               BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT '내부 기준 평가 점수 ID',
-    customer_id                      BIGINT         NOT NULL COMMENT '고객ID',
-    internal_css_evaluation_score_id BIGINT         NOT NULL COMMENT '고객 CSS ID',
-    internal_evaluation_policy_id    BIGINT         NOT NULL COMMENT '내부 평가 정책 ID',
-    evaluated_value                  DECIMAL(32, 9) NOT NULL COMMENT '평가된 값',
-    score                            INT            NOT NULL COMMENT '점수',
-    INDEX idx_customer_id (customer_id),
-    INDEX idx_internal_evaluation_policy_id (internal_evaluation_policy_id)
-) COMMENT ='내부 CSS 평가 점수 항목';
--->
     <insert id="saveInternalCssEvaluationScore">
         INSERT INTO internal_css_evaluation_scores
         (id,
@@ -63,5 +35,18 @@ CREATE TABLE internal_css_evaluation_score_items
                 #{evaluatedValue},
                 #{score})
     </insert>
+
+    <select id="findByCustomerIdAndExpiredAtGreaterThanEqual" resultType="io.watertheqlant.loan.evaluation.system.domain.entity.InternalCssEvaluationScore">
+        SELECT id,
+               customer_id,
+               internal_css_grade_policy_id,
+               css_grade,
+               scb_credit_info_id,
+               expired_at,
+               evaluated_at
+        FROM internal_css_evaluation_scores
+        WHERE customer_id = #{customerId}
+          AND expired_at >= #{requestedAt}
+    </select>
 
 </mapper>

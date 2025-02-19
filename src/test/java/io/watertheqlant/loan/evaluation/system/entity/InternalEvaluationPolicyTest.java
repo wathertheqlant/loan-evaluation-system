@@ -1,7 +1,8 @@
 package io.watertheqlant.loan.evaluation.system.entity;
 
-import io.watertheqlant.loan.evaluation.system.type.OperatorType;
-import io.watertheqlant.loan.evaluation.system.vo.InternalEvaluationPolicyResult;
+import io.watertheqlant.loan.evaluation.system.domain.entity.InternalEvaluationPolicy;
+import io.watertheqlant.loan.evaluation.system.domain.type.OperatorType;
+import io.watertheqlant.loan.evaluation.system.domain.vo.InternalEvaluationPolicyResult;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;

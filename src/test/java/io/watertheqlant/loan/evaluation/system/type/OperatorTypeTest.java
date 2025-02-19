@@ -1,5 +1,6 @@
 package io.watertheqlant.loan.evaluation.system.type;
 
+import io.watertheqlant.loan.evaluation.system.domain.type.OperatorType;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
