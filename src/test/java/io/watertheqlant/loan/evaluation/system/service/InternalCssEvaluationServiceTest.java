@@ -1,7 +1,11 @@
 package io.watertheqlant.loan.evaluation.system.service;
 
-import io.watertheqlant.loan.evaluation.system.entity.InternalCssEvaluationScore;
-import io.watertheqlant.loan.evaluation.system.entity.ScbCreditInfo;
+import io.watertheqlant.loan.evaluation.system.domain.dto.InternalCssEvaluationResult;
+import io.watertheqlant.loan.evaluation.system.domain.entity.Customer;
+import io.watertheqlant.loan.evaluation.system.domain.entity.InternalCssEvaluationScore;
+import io.watertheqlant.loan.evaluation.system.domain.entity.ScbCreditInfo;
+import io.watertheqlant.loan.evaluation.system.domain.service.InternalCssEvaluationService;
+import io.watertheqlant.loan.evaluation.system.domain.service.ScbCreditInfoService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -21,8 +25,13 @@ class InternalCssEvaluationServiceTest {
 
   @Test
   void evaluate() {
-    ScbCreditInfo scbCreditInfo = scbCreditInfoService.queryAndSave(1L, "9301011234567");
-    InternalCssEvaluationScore result = internalCssEvaluationService.evaluate(1L, scbCreditInfo);
+    Customer customer = Customer.builder()
+      .id(1L)
+      .customerName("홍길동")
+      .customerJumin("9301011234567")
+      .build();
+    ScbCreditInfo scbCreditInfo = scbCreditInfoService.queryAndSave(customer);
+    InternalCssEvaluationResult result = internalCssEvaluationService.evaluate(1L, scbCreditInfo);
     assertNotNull(result);
   }
 

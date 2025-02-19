@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="io.watertheqlant.loan.evaluation.system.dao.CreditInfoDictionaryMapper">
+<mapper namespace="io.watertheqlant.loan.evaluation.system.domain.dao.CreditInfoDictionaryMapper">
 
-    <select id="findCreditInfoDictionaryByTypeName" resultType="io.watertheqlant.loan.evaluation.system.entity.CreditInfoDictionary">
+    <select id="findCreditInfoDictionaryByTypeName" resultType="io.watertheqlant.loan.evaluation.system.domain.entity.CreditInfoDictionary">
         SELECT *
         FROM credit_info_dictionary
         WHERE type_name = #{typeName}

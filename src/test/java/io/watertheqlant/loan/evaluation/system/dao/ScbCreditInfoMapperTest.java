@@ -1,7 +1,8 @@
 package io.watertheqlant.loan.evaluation.system.dao;
 
-import io.watertheqlant.loan.evaluation.system.entity.ScbCreditInfoDetail;
-import io.watertheqlant.loan.evaluation.system.entity.ScbCreditInfo;
+import io.watertheqlant.loan.evaluation.system.domain.dao.ScbCreditInfoMapper;
+import io.watertheqlant.loan.evaluation.system.domain.entity.ScbCreditInfoDetail;
+import io.watertheqlant.loan.evaluation.system.domain.entity.ScbCreditInfo;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
